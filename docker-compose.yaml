@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app-start:
+    build:
+      context: create-react-app
+      dockerfile: ../Dockerfile.start
+    image: workshop-start
+    ports:
+      - 8080:8080
+  app-slim:
+    build:
+      context: create-react-app
+      dockerfile: ../Dockerfile.slim
+    image: workshop-slim
+    ports:
+      - 8081:8080
+  app-multistage:
+    build:
+      context: create-react-app
+      dockerfile: ../Dockerfile.multistage
+    image: workshop-multistage
+    ports:
+      - 8082:8080

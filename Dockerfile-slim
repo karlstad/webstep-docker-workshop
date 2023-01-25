@@ -1,9 +1,10 @@
-FROM node
+FROM node:18.13-bullseye-slim
 
 WORKDIR /app
 
 COPY . .
 
+RUN npm install
 RUN npm run build
 
 ENV PORT=8080
